@@ -11,7 +11,8 @@
     "packages/vue"
   ],
   "scripts": {
-    "release": "npx git-ensure --no-behind -b main --clean && npx bumpp --commit --tag --push"
+    "release": "npx git-ensure --no-behind -b main --clean && npx bumpp --commit --tag --push",
+    "lint": "eslint \"**/*.{vue,ts,js}\""
   },
   "repository": {
     "type": "git",
@@ -32,9 +33,5 @@
   "bugs": {
     "url": "https://github.com/nickgraffis/eslint/issues"
   },
-  "homepage": "https://github.com/nickgraffis/eslint#readme",
-  "dependencies": {
-    "@nickgraffis/eslint-basic": "file:packages/basic",
-    "@nickgraffis/eslint-ts": "file:packages/typescript"
-  }
+  "homepage": "https://github.com/nickgraffis/eslint#readme"
 }
