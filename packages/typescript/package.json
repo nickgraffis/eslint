@@ -23,7 +23,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
-    "@nickgraffis/eslint-basic": "file:packages/basic"
+    "@nickgraffis/eslint-basic": "file:../basic"
   },
   "devDependencies": {
     "eslint": "^8.5.0"

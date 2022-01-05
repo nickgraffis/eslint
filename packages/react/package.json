@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "eslint-plugin-react": "^7.28.0",
-    "@nickgraffis/eslint-typescript": "file:packages/typescript"
+    "@nickgraffis/eslint-ts": "file:../typescript"
   },
   "devDependencies": {
     "eslint": "^8.5.0",
