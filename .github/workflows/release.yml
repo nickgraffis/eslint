@@ -19,22 +19,17 @@ jobs:
       - name: Get changed files using defaults
         id: changed-files
         uses: tj-actions/changed-files@v13
-      - name: List all added files
-        run: |
-          for file in ${{ steps.changed-files.outputs.modified_files }}; do
-            echo "$file was added"
-          done
       - name: basic
-        if: contains(github.ref, 'refs/tags/basic')
+        if: contains(steps.changed-files.outputs.modified_files, "packages/basic/package.json")
         run: cd packages/basic
       - name: typescript
-        if: contains(github.ref, 'refs/tags/typescript')
+        if: contains(steps.changed-files.outputs.modified_files, "packages/typescript/package.json")
         run: cd packages/typescript
       - name: react
-        if: contains(github.ref, 'refs/tags/react')
+        if: contains(steps.changed-files.outputs.modified_files, "packages/react/package.json")
         run: cd packages/react
       - name: vue
-        if: contains(github.ref, 'refs/tags/vue')
+        if: contains(steps.changed-files.outputs.modified_files, "packages/vue/package.json")
         run: cd packages/vue
       - run: npm i -g npm @antfu/ni
       - run: nci
