@@ -22,19 +22,34 @@ jobs:
       - name: basic
         if: contains(steps.changed-files.outputs.modified_files, 'basic')
         run: cd packages/basic
+        run: cd packages/vue
+        run: npm i -g npm @antfu/ni
+        run: nci
+        run: nr test --if-present
+        run: npm publish --access public
       - name: typescript
         if: contains(steps.changed-files.outputs.modified_files, 'typescript')
         run: cd packages/typescript
+        run: cd packages/vue
+        run: npm i -g npm @antfu/ni
+        run: nci
+        run: nr test --if-present
+        run: npm publish --access public
       - name: react
         if: contains(steps.changed-files.outputs.modified_files, 'react')
         run: cd packages/react
+        run: cd packages/vue
+        run: npm i -g npm @antfu/ni
+        run: nci
+        run: nr test --if-present
+        run: npm publish --access public
       - name: vue
         if: contains(steps.changed-files.outputs.modified_files, 'vue')
         run: cd packages/vue
-      - run: npm i -g npm @antfu/ni
-      - run: nci
-      - run: nr test --if-present
-      - run: npm publish --access public
+        run: npm i -g npm @antfu/ni
+        run: nci
+        run: nr test --if-present
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       - run: npx conventional-github-releaser -p angular
