@@ -16,6 +16,18 @@ jobs:
         with:
           node-version: '14'
           registry-url: https://registry.npmjs.org/
+      - name: basic
+        if: contains(github.ref, 'refs/tags/basic')
+        run: cd packages/basic
+      - name: typescript
+        if: contains(github.ref, 'refs/tags/typescript')
+        run: cd packages/typescript
+      - name: react
+        if: contains(github.ref, 'refs/tags/react')
+        run: cd packages/react
+      - name: vue
+        if: contains(github.ref, 'refs/tags/vue')
+        run: cd packages/vue
       - run: npm i -g npm @antfu/ni
       - run: nci
       - run: nr test --if-present
