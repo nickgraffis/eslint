@@ -1,11 +1,11 @@
 {
   "name": "@nickgraffis/eslint",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "🧹 My eslint settings.",
   "main": "index.js",
   "bin": "init.js",
   "scripts": {
-    "lint": "eslint . --config=index.js"
+    "lint": "eslint \"**/*.{vue,ts,js}\""
   },
   "repository": {
     "type": "git",
