@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "lint": "eslint . --config=index.js",
-    "release": "npx git-ensure --no-behind -b main --clean && npx bumpp --commit \"release v%s typescript\" --tag \"v%s typescript\" --push"
+    "release": "npx git-ensure --no-behind -b main --clean && npx bumpp --commit --tag --push"
   },
   "main": "index.js",
   "publishConfig": {
