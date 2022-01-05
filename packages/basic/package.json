@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint . --config=index.js",
-    "release": "npx git-ensure --no-behind -b main --clean && npx bumpp --commit --tag \"v%s basic\" --push"
+    "release": "npx git-ensure --no-behind -b main --clean && npx bumpp --commit --tag --push"
   },
   "repository": {
     "type": "git",
