@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const VERSION = '1.0.4';
+const VERSION = require('./package.json').version;
 const fs = require('fs');
 const path = require('path');
 
