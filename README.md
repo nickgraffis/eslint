@@ -3,8 +3,17 @@
 ## Automated Set Up
 
 ```bash
-npx @nickgraffis/eslint
+npx @nickgraffis/eslint -basic
 ```
+
+## Flag Options
+* `-basic`: Basic ESLint configuration.
+* `-react`: React ESLint configuration.
+  * `react` and `ts` configs.
+* `-ts`: TypeScript ESLint configuration.
+  * `ts` and `basic` configs.
+* `-vue`: Vue ESLint configuration.
+  * `vue` and `ts` configs.
 
 ## Install
 
