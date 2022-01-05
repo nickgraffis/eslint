@@ -1,4 +1,10 @@
-Usage
+# @nickgraffis/eslint
+
+## Automated Set Up
+
+```bash
+npx @nickgraffis/eslint
+```
 
 ## Install
 

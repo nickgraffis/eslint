@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
+const VERSION = '1.0.4';
 const fs = require('fs');
 const path = require('path');
 
-console.log('Setting up eslint config...');
 const eslintrc = {
   "extends": [
     "@nickgraffis/eslint"
@@ -44,9 +44,8 @@ if (!fs.existsSync(settingsPath)) {
 
 const packageJson = require(path.join(process.cwd(), 'package.json'));
 packageJson.scripts.lint = "eslint \"**/*.{vue,ts,js}\""
-const version = packageJson.version;
 packageJson.devDependencies = packageJson?.devDependencies || {};
-packageJson.devDependencies['@nickgraffis/eslint'] = `^${version}`;
+packageJson.devDependencies['@nickgraffis/eslint'] = `^${VERSION}`;
 
 fs.writeFileSync(path.join(process.cwd(), 'package.json'), JSON.stringify(packageJson, null, 2));
 console.log('🎉 Installed ESLint configs. Run `npm install` to finish!');
