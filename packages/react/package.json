@@ -1,0 +1,30 @@
+{
+  "name": "@nickgraffis/eslint-react",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "author": "Nick Graffis <hi@nickgraffis.me> (https://nickgraffis.me)",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --config=index.js",
+    "release": "npx git-ensure --no-behind -b main --clean && npx bumpp --commit --tag \"v%s react\" --push"
+  },
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "eslint-plugin-react": "^7.28.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.5.0",
+    "react": "^17.0.2",
+    "typescript": "^4.5.4"
+  }
+}

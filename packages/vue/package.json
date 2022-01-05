@@ -1,0 +1,28 @@
+{
+  "name": "@nickgraffis/eslint-vue",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "author": "Nick Graffis <hi@nickgraffis.me> (https://nickgraffis.me)",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint . --config=index.js",
+    "release": "npx git-ensure --no-behind -b main --clean && npx bumpp --commit --tag \"v%s vue\" --push"
+  },
+  "main": "index.js",
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "eslint-plugin-vue": "^8.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.5.0"
+  }
+}

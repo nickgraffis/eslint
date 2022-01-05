@@ -4,8 +4,11 @@
   "description": "🧹 My eslint settings.",
   "main": "index.js",
   "bin": "init.js",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "release": "git-ensure --no-behind -b main --clean && bumpp --commit --tag --push"
+    "release": "npx git-ensure --no-behind -b main --clean && npx bumpp --commit --tag --push"
   },
   "repository": {
     "type": "git",
@@ -13,21 +16,6 @@
   },
   "peerDependencies": {
     "eslint": ">=7.4.0"
-  },
-  "dependencies": {
-    "bumpp": "^7.1.1",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-html": "^6.2.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsonc": "^2.0.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-unicorn": "^39.0.0",
-    "eslint-plugin-yml": "^0.12.0",
-    "git-ensure": "^0.1.0",
-    "jsonc-eslint-parser": "^2.0.4",
-    "yaml-eslint-parser": "^0.5.0"
   },
   "devDependencies": {
     "eslint": "^8.5.0"

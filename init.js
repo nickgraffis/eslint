@@ -11,18 +11,32 @@ const eslintrc = {
 }
 
 const eslintrcPath = path.join(process.cwd(), '.eslintrc.json');
-fs.writeFileSync(eslintrcPath, JSON.stringify(eslintrc, null, 2));
+if (!fs.existsSync(eslintrcPath)) {
+  fs.writeFileSync(eslintrcPath, JSON.stringify(eslintrc, null, 2));
+} else {
+  const currentEslintrc = require(eslintrcPath);
+  currentEslintrc.extends.push("@nickgraffis/eslint");
+  fs.writeFileSync(eslintrcPath, JSON.stringify(currentEslintrc, null, 2));
+}
 
 const eslintignore = [
   "node_modules",
   "dist",
   "build",
-  "coverage",
   "public",
 ]
 
 const eslintignorePath = path.join(process.cwd(), '.eslintignore');
-fs.writeFileSync(eslintignorePath, eslintignore.join('\n'));
+if (!fs.existsSync(eslintignorePath)) {
+  fs.writeFileSync(eslintignorePath, eslintignore.join("\n"));
+} else {
+  const currentEslintignore = fs.readFileSync(eslintignorePath, 'utf8');
+  const newEslintignore = currentEslintignore
+  .split("\n")
+  .concat(eslintignore)
+  .filter(Boolean);
+  fs.writeFileSync(eslintignorePath, [...new Set(newEslintignore)].join("\n"));
+}
 
 
 const vscodePath = path.join(process.cwd(), '.vscode');
@@ -40,6 +54,16 @@ const settings = {
 const settingsPath = path.join(process.cwd(), '.vscode/settings.json');
 if (!fs.existsSync(settingsPath)) {
   fs.writeFileSync(settingsPath, JSON.stringify(settings, null, 2));
+} else {
+  const currentSettings = require(settingsPath);
+  currentSettings.prettier = settings?.prettier || {};
+  currentSettings.prettier.enable = false;
+  currentSettings.editor = currentSettings?.editor || {};
+  currentSettings.editor.codeActionsOnSave = currentSettings.editor?.codeActionsOnSave || {};
+  currentSettings.editor.codeActionsOnSave.source = currentSettings.editor.codeActionsOnSave?.source || {};
+  currentSettings.editor.codeActionsOnSave.source.fixAll = currentSettings.editor.codeActionsOnSave.source?.fixAll || {};
+  currentSettings.editor.codeActionsOnSave.source.fixAll.eslint = true;
+  fs.writeFileSync(settingsPath, JSON.stringify(currentSettings, null, 2));
 }
 
 const packageJson = require(path.join(process.cwd(), 'package.json'));

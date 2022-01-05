@@ -1,0 +1,37 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: daily
+      time: '03:00'
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+  - package-ecosystem: npm
+    directory: '/packages/basic'
+    schedule:
+      interval: daily
+      time: '03:00'
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+  - package-ecosystem: npm
+    directory: '/packages/react'
+    schedule:
+      interval: daily
+      time: '03:00'
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+  - package-ecosystem: npm
+    directory: '/packages/vue'
+    schedule:
+      interval: daily
+      time: '03:00'
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+  - package-ecosystem: npm
+    directory: '/packages/typescript'
+    schedule:
+      interval: daily
+      time: '03:00'
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
