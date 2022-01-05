@@ -18,14 +18,14 @@ npx @nickgraffis/eslint -basic
 ## Install
 
 ```bash
-npm install @nickgraffis/eslint
+npm install @nickgraffis/eslint-[basic|react|ts|vue]
 ```
 
 ## Config .eslintrc
 ```json
 {
   "extends": [
-    "@nickgraffis/eslint"
+    "@nickgraffis/eslint-[basic|react|ts|vue]"
   ]
 }
 ```
