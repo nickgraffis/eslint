@@ -20,16 +20,16 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v13
       - name: basic
-        if: contains(steps.changed-files.outputs.modified_files, packages/basic/package.json)
+        if: contains(steps.changed-files.outputs.modified_files, 'basic')
         run: cd packages/basic
       - name: typescript
-        if: contains(steps.changed-files.outputs.modified_files, packages/typescript/package.json)
+        if: contains(steps.changed-files.outputs.modified_files, 'typescript')
         run: cd packages/typescript
       - name: react
-        if: contains(steps.changed-files.outputs.modified_files, packages/react/package.json)
+        if: contains(steps.changed-files.outputs.modified_files, 'react')
         run: cd packages/react
       - name: vue
-        if: contains(steps.changed-files.outputs.modified_files, packages/vue/package.json)
+        if: contains(steps.changed-files.outputs.modified_files, 'vue')
         run: cd packages/vue
       - run: npm i -g npm @antfu/ni
       - run: nci
