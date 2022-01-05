@@ -5,7 +5,10 @@
   "main": "index.js",
   "bin": "init.js",
   "workspaces": [
-    "packages/*"
+    "packages/basic",
+    "packages/react",
+    "packages/typescript",
+    "packages/vue"
   ],
   "scripts": {
     "release": "npx git-ensure --no-behind -b main --clean && npx bumpp --commit --tag --push"
@@ -29,5 +32,9 @@
   "bugs": {
     "url": "https://github.com/nickgraffis/eslint/issues"
   },
-  "homepage": "https://github.com/nickgraffis/eslint#readme"
+  "homepage": "https://github.com/nickgraffis/eslint#readme",
+  "dependencies": {
+    "@nickgraffis/eslint-basic": "file:packages/basic",
+    "@nickgraffis/eslint-ts": "file:packages/typescript"
+  }
 }

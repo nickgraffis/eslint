@@ -20,7 +20,8 @@
     "access": "public"
   },
   "dependencies": {
-    "eslint-plugin-vue": "^8.2.0"
+    "eslint-plugin-vue": "^8.2.0",
+    "@nickgraffis/eslint-typescript": "file:packages/typescript"
   },
   "devDependencies": {
     "eslint": "^8.5.0"
