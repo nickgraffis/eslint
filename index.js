@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 const vue = require('./scripts/vue')
 const basic = require('./scripts/basic')
 const react = require('./scripts/react')
