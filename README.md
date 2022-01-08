@@ -5,6 +5,7 @@
 ```bash
 npx @nickgraffis/eslint -basic
 ```
+> :warning: **Remove node_modules**: For automated set up, remove the node_modules folder. I'm not sure why this is causing an issue...
 
 ## Flag Options
 * `-basic`: Basic ESLint configuration.
