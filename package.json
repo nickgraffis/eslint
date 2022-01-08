@@ -1,6 +1,6 @@
 {
   "name": "@nickgraffis/eslint",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "🧹 My eslint settings.",
   "main": "index.js",
   "bin": "index.js",
