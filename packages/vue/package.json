@@ -24,6 +24,6 @@
     "@nickgraffis/eslint-ts": "file:../typescript"
   },
   "devDependencies": {
-    "eslint": "^8.5.0"
+    "eslint": "^8.15.0"
   }
 }
