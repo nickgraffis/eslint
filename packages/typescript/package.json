@@ -26,6 +26,6 @@
     "@nickgraffis/eslint-basic": "file:../basic"
   },
   "devDependencies": {
-    "eslint": "^8.5.0"
+    "eslint": "^8.24.0"
   }
 }
